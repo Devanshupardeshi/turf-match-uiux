@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Match Chat - TurfMatch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c1c8ca",
+                        "primary": "#006e23",
+                        "on-surface": "#161d15",
+                        "inverse-primary": "#5ce06d",
+                        "tertiary-container": "#9ea1a1",
+                        "on-primary-fixed-variant": "#005319",
+                        "outline-variant": "#bdcab8",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c4c7c7",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f4fcee",
+                        "on-tertiary-fixed-variant": "#444748",
+                        "on-secondary-fixed-variant": "#41484a",
+                        "on-primary-fixed": "#002106",
+                        "tertiary": "#5c5f5f",
+                        "secondary-container": "#dae1e3",
+                        "on-surface-variant": "#3e4a3c",
+                        "surface-dim": "#d4dccf",
+                        "background": "#f4fcee",
+                        "inverse-surface": "#2b322a",
+                        "error-container": "#ffdad6",
+                        "on-background": "#161d15",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#eef6e9",
+                        "surface-container": "#e8f0e3",
+                        "surface-container-high": "#e3ebdd",
+                        "on-secondary-container": "#5d6466",
+                        "on-tertiary-container": "#343838",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#dde5d8",
+                        "primary-container": "#2eb84b",
+                        "on-tertiary-fixed": "#191c1d",
+                        "inverse-on-surface": "#ebf3e6",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#161d1f",
+                        "secondary": "#586062",
+                        "on-primary-container": "#004112",
+                        "surface-tint": "#006e23",
+                        "outline": "#6d7b6a",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f4fcee",
+                        "secondary-fixed": "#dde4e6",
+                        "primary-fixed-dim": "#5ce06d",
+                        "tertiary-fixed": "#e1e3e3",
+                        "primary-fixed": "#7afd86",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#dde5d8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "16px",
+                        "stack-sm": "4px",
+                        "gutter": "12px",
+                        "unit": "8px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline backdrop-blur-md bg-opacity-90 flex justify-between items-center px-4 h-14">
+<div class="flex items-center gap-3">
+<button class="active:scale-95 transition-transform duration-150 text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-on-surface leading-tight">Weekend Smashers</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Today, 06:30 PM
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="active:scale-95 transition-transform duration-150 text-on-surface-variant p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">group</span>
+</button>
+<button class="active:scale-95 transition-transform duration-150 text-on-surface-variant p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 mt-14 mb-[140px] flex flex-col relative">
+<!-- Pinned Attendance Poll -->
+<div class="sticky top-14 z-40 bg-surface-container-low p-4 shadow-sm border-b border-outline-variant">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">how_to_reg</span>
+<span class="font-label-lg text-label-lg text-on-surface">Final Attendance Check</span>
+</div>
+<span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Active</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-primary text-on-primary rounded-xl py-2 px-4 flex flex-col items-center justify-center active:scale-95 transition-all">
+<span class="font-label-bold text-label-bold">I'm Coming</span>
+<span class="text-[10px] opacity-80">9/12 Confirmed</span>
+</button>
+<button class="bg-secondary-container text-on-secondary-container rounded-xl py-2 px-4 flex flex-col items-center justify-center active:scale-95 transition-all border border-outline-variant">
+<span class="font-label-bold text-label-bold">Can't Make It</span>
+<span class="text-[10px] opacity-80">2 Declined</span>
+</button>
+</div>
+</div>
+<!-- Message List -->
+<div class="flex-1 p-4 space-y-6">
+<!-- System Message -->
+<div class="flex justify-center">
+<span class="bg-surface-variant px-3 py-1 rounded-full text-[11px] text-on-surface-variant font-medium">Match booked at HSR Turf • 10 mins ago</span>
+</div>
+<!-- Message Group: Other Player -->
+<div class="flex items-end gap-2 group">
+<div class="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 bg-secondary-fixed-dim">
+<img alt="Rahul" class="w-full h-full object-cover" data-alt="Close up portrait of a young Indian male athlete with a focused expression, wearing a high-performance cricket jersey. The background is a blurred green cricket turf with soft outdoor lighting. The image style is sharp, clean, and modern, reflecting an athletic lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLIcCJ1adJ6g7x-25ja7kPyfNnMB5xSL_B1yDeVpJeL48oeg_5kFmmDo9VpGxF3BhE0hJwv4fzTFapMfHyAfEXp8oM8-SrPufaeOl_5kh2P9hcYVuBvWzJwf6fkjIIKNfEWIe25PFs_FoIpgKjvv5PHjAmFLm0jD2bGIxcgEXL74DNvzLgYi7cao-xblYixQuVRiUc4R2VR7uOEp-Di7pYHNEzoKTF_aEKU9ITT-1oS9jti_P-CBSpvp1PcaGjXp9Nd-4rDnmvASk"/>
+</div>
+<div class="flex flex-col max-w-[75%]">
+<span class="font-label-sm text-label-sm ml-2 text-on-surface-variant">Rahul S.</span>
+<div class="bg-surface-container-highest text-on-surface p-3 rounded-2xl rounded-bl-none shadow-sm">
+<p class="font-body-md text-body-md">Guys, who's bringing the ball today? My previous one is worn out.</p>
+</div>
+</div>
+</div>
+<!-- Message Group: User -->
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-end gap-2 justify-end w-full">
+<div class="flex flex-col max-w-[75%] items-end">
+<div class="bg-primary text-on-primary p-3 rounded-2xl rounded-br-none shadow-md">
+<p class="font-body-md text-body-md">I've got a new pack of Kookaburra balls. Bringing them!</p>
+</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm mr-2 text-on-surface-variant opacity-60">Read 05:42 PM</span>
+</div>
+<!-- Message Group: Another Player -->
+<div class="flex items-end gap-2">
+<div class="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 bg-tertiary-fixed">
+<img alt="Amit" class="w-full h-full object-cover" data-alt="Action shot of a cricket player running between wickets on a vibrant green turf field. The lighting is golden hour, casting long soft shadows. The overall aesthetic is energetic and dynamic, focusing on movement and team spirit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTWy-x6cDJvNv2JU9p8v_MIk1k61tRpwqRiVEsnemxmpAbu-u5UPdeYTzqJ6LJ1EI0bu_ZLBILmAAuppA3QBjqyAbqKU4YCBmSHSsa0R6byt6IlSDSoTCchZAfHd_BVcuENCPrk1dGnw2iVQ2B3zZFbBQqJ23EttzFEvDzaH0LYvD8jkpxOrxnombh3wOO4Yf_I_18m65S1Bm3rbWukwWWwWKULUPGFKv7zcEkUSDzUYvjI3U4aGabBxOPX0PVnyTbyx7R6dCd9wA"/>
+</div>
+<div class="flex flex-col max-w-[75%]">
+<span class="font-label-sm text-label-sm ml-2 text-on-surface-variant">Amit Verma</span>
+<div class="bg-surface-container-highest text-on-surface p-3 rounded-2xl rounded-bl-none shadow-sm">
+<p class="font-body-md text-body-md">Perfect. @Rahul, don't worry about it. I'm reaching in 5 mins.</p>
+</div>
+</div>
+</div>
+<!-- Status Update Notification -->
+<div class="flex justify-center">
+<div class="bg-primary-container/20 border border-primary/20 px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<p class="text-[12px] text-on-primary-container"><strong>Amit Verma</strong> is now at the turf!</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Persistent Status Footer -->
+<div class="fixed bottom-16 left-0 w-full z-40 px-4 pb-2">
+<div class="bg-surface-container-lowest border border-outline-variant p-3 rounded-2xl shadow-lg flex gap-2 items-center">
+<span class="text-[12px] font-semibold text-on-surface-variant mr-auto ml-2">Quick Status:</span>
+<button class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm py-1.5 px-4 rounded-full border border-outline-variant active:scale-95 transition-all">
+                I'm reaching
+            </button>
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm py-1.5 px-4 rounded-full active:scale-95 transition-all">
+                I'm here
+            </button>
+</div>
+</div>
+<!-- Message Input Bar (Fixed Bottom) -->
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-outline-variant p-3 flex items-center gap-3">
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<div class="flex-1 bg-surface-container rounded-full px-4 py-2 flex items-center border border-outline-variant">
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md font-body-md text-on-surface" placeholder="Message match group..." type="text"/>
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined">mood</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center active:scale-90 transition-all shadow-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</footer>
+<!-- Invisible BottomNavBar Mockup for "Explore" state spacing -->
+<div class="h-16 w-full"></div>
+</body></html>

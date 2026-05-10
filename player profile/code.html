@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TurfMatch - Player Profile</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#5b3800",
+                    "secondary-fixed": "#ffddb8",
+                    "background": "#0c1324",
+                    "outline": "#86948a",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "secondary": "#ffb95f",
+                    "inverse-on-surface": "#293042",
+                    "on-tertiary": "#002e6a",
+                    "on-primary-fixed": "#002113",
+                    "error": "#ffb4ab",
+                    "on-surface": "#dce2fa",
+                    "surface-tint": "#4edea3",
+                    "tertiary-container": "#71a1ff",
+                    "surface-dim": "#0c1324",
+                    "on-primary-fixed-variant": "#005236",
+                    "surface-container-lowest": "#070e1e",
+                    "on-secondary": "#472a00",
+                    "secondary-container": "#ee9800",
+                    "on-tertiary-fixed": "#001a42",
+                    "tertiary-fixed": "#d8e2ff",
+                    "surface-container-highest": "#2e3447",
+                    "on-error": "#690005",
+                    "primary-fixed": "#6ffbbe",
+                    "on-primary-container": "#00422b",
+                    "surface-container-low": "#141b2c",
+                    "surface-bright": "#32394c",
+                    "on-primary": "#003824",
+                    "tertiary-fixed-dim": "#adc6ff",
+                    "tertiary": "#adc6ff",
+                    "surface-variant": "#2e3447",
+                    "inverse-surface": "#dce2fa",
+                    "on-tertiary-container": "#00367a",
+                    "on-tertiary-fixed-variant": "#004395",
+                    "error-container": "#93000a",
+                    "primary-container": "#10b981",
+                    "on-surface-variant": "#bbcabf",
+                    "inverse-primary": "#006c49",
+                    "surface": "#0c1324",
+                    "surface-container": "#181f31",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "primary-fixed-dim": "#4edea3",
+                    "on-secondary-fixed": "#2a1700",
+                    "outline-variant": "#3c4a42",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#dce2fa",
+                    "surface-container-high": "#232a3c",
+                    "primary": "#4edea3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "2.5rem",
+                    "xs": "0.25rem",
+                    "sm": "0.5rem",
+                    "lg": "1.5rem",
+                    "container-margin": "1rem",
+                    "md": "1rem",
+                    "gutter": "1rem",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "title-md": [
+                            "Lexend"
+                    ],
+                    "headline-lg": [
+                            "Anton"
+                    ],
+                    "body-lg": [
+                            "Lexend"
+                    ],
+                    "label-caps": [
+                            "Lexend"
+                    ],
+                    "headline-lg-mobile": [
+                            "Anton"
+                    ],
+                    "display-lg": [
+                            "Anton"
+                    ],
+                    "body-sm": [
+                            "Lexend"
+                    ]
+            },
+            "fontSize": {
+                    "title-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "52px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Ambient Background Texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 0l20 20-20 20L0 20z" fill="white" fill-opacity="0.02" fill-rule="evenodd"/></svg>');
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Subtle glow utilities */
+        .glow-primary {
+            filter: drop-shadow(0 4px 20px rgba(16, 185, 129, 0.3));
+        }
+        .glow-secondary {
+            filter: drop-shadow(0 4px 20px rgba(255, 185, 95, 0.2));
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 sticky z-50 bg-background/80 border-b border-outline-variant/20 backdrop-blur-md shadow-[0_4_20px_rgba(16,185,129,0.1)]">
+<div class="flex justify-between items-center px-container-margin py-sm w-full max-w-7xl mx-auto">
+<!-- Leading Icon -->
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-primary dark:text-primary text-2xl">location_on</span>
+</button>
+<!-- Headline / Logo -->
+<div class="flex items-center justify-center flex-1">
+<img alt="CREASE Logo" class="h-10 w-auto object-contain glow-primary" src="https://lh3.googleusercontent.com/aida/ADBb0uiRqpqbrTyoQjaVyRoqvmz8_IbZ1H25-G8KoQN_lW-fI-r3JV3AmhBHPXbUHy7bg9MqzSvi2YejrgXIJTtZ9ST1maczWykVTbOMYq_92I4eAwpvvXvUqTBFpjSukeWVGTgexiIh5NtFHgJ1U2VrzKEd8OfdruNDnIl6A2jVoP3IwsggsPHWO2NPVstIbQwmuq2uNCIXUvwh-idWg9o4Lz6qI0vSkDp56stEQB_9Iq8ZozNy1X7taPwRu5oUqKkkgjDI-1LXH2NafQ"/>
+</div>
+<!-- Trailing Avatar -->
+<button class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/50 hover:border-primary transition-colors">
+<img class="w-full h-full object-cover" data-alt="A close-up profile portrait of a confident young athlete looking directly at the camera. The lighting is dramatic and moody, utilizing deep shadows and crisp, cool highlights to emphasize a high-performance, intense mood. The background is completely dark, isolating the subject and aligning with a premium, sleek dark-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRtcuQ5xgqPsGOlKk3UxdoDxa5oYbgefrxhSlbJaSgMzYVtuLysildv4Fabnk5NsamGnkEWSBvV5dNQbKYU4bKkMGoucUGsJajagZVR2kUkiDz2_wXlPSD3gEOYIe24ckrL3JawXrCu9ibtPWqEhlZVvxH7Jx4jLdRXsDbq_d6geaLIsM-A5MhSwOrA-YISJnZdf3OQBbITXklJI3BCkG2mz9v0cHtrGuG8Nk27eh04eyWqAnpmj66mUSkX4lr_aJMVFnJvwwM4QE"/>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-7xl mx-auto px-container-margin pt-xl flex flex-col gap-xl">
+<!-- Player Hero Section -->
+<section class="flex flex-col items-center justify-center text-center relative mt-lg">
+<!-- Glowing Trust Score Dial & Avatar -->
+<div class="relative w-56 h-56 flex items-center justify-center mb-md">
+<!-- SVG Dial Track -->
+<svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewbox="0 0 100 100">
+<!-- Background Circle -->
+<circle class="stroke-surface-container-highest" cx="50" cy="50" fill="none" r="46" stroke-width="4"></circle>
+<!-- Foreground Progress (98%) -->
+<circle class="stroke-primary" cx="50" cy="50" fill="none" r="46" stroke-dasharray="289" stroke-dashoffset="5.78" stroke-linecap="round" stroke-width="4" style="filter: drop-shadow(0 0 12px rgba(16,185,129,0.6));"></circle>
+</svg>
+<!-- Main Avatar -->
+<div class="relative w-44 h-44 rounded-full overflow-hidden border-4 border-background z-10 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A highly dynamic portrait of an intense Indian cricket player in a dark stadium setting. The player is illuminated by harsh, directional floodlights that cast deep, athletic shadows across their face. The image has a raw, gritty texture, emphasizing sweat and determination, perfectly matching a high-octane sports brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuB93nZY21IwOfK9gXxH1opQnWb-gwB18g7YBfaXNXAb6lQ3aELFC6uSza953WI_kDZhKC2qDWfT_TgdCYoMsE35-X2T_8AXP0L-3l3oqzD3xP0I9hPQZoBegKdMoP49dikF-YTOTSGkLKbknamz2ntZk4Q8-0KDgALtgYEanDa33P1jELLPbBfhFhUs_-Qen1E2tcd-dUgpyrba7EDT0lO0uI0LiBLvsVegFwjJK5X0Tv62N7n8Nu_Pb6egnoQURUvnJjC4qBeI0"/>
+</div>
+<!-- Trust Score Badge -->
+<div class="absolute -bottom-3 bg-surface-container-highest border border-primary px-lg py-1 rounded-full flex flex-col items-center justify-center z-20 glow-primary">
+<span class="font-headline-lg text-title-md text-primary leading-none">98%</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase text-[10px] tracking-widest mt-1">Elite</span>
+</div>
+</div>
+<!-- Player Info -->
+<h1 class="font-display-lg text-display-lg text-on-surface uppercase tracking-tight mb-2">Virat Singh</h1>
+<!-- Chips -->
+<div class="flex items-center gap-3 mb-lg">
+<span class="inline-flex items-center gap-1 bg-secondary/10 border border-secondary/30 text-secondary px-3 py-1 rounded-full font-label-caps text-label-caps uppercase glow-secondary">
+<span class="material-symbols-outlined text-[14px]">sports_cricket</span>
+                    All-Rounder
+                </span>
+<span class="inline-flex items-center gap-1 bg-surface-container border border-outline-variant/30 text-on-surface-variant px-3 py-1 rounded-full font-label-caps text-label-caps uppercase">
+                    Level 42
+                </span>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-4 w-full max-w-md mx-auto">
+<button class="flex-1 bg-primary text-on-primary font-headline-lg text-title-md uppercase py-sm px-md rounded-lg glow-primary hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">person_add</span>
+                    Connect
+                </button>
+<button class="flex-1 bg-transparent border-2 border-primary text-primary font-headline-lg text-title-md uppercase italic py-sm px-md rounded-lg hover:bg-primary/10 active:scale-95 transition-all flex items-center justify-center gap-2 transform skew-x-[-8deg]">
+<span class="skew-x-[8deg] flex items-center gap-2">
+<span class="material-symbols-outlined">send</span>
+                        Invite
+                    </span>
+</button>
+</div>
+</section>
+<!-- Textile Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent my-sm"></div>
+<!-- Career Stats Bento Grid -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-headline-lg text-title-md text-on-surface uppercase mb-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">bar_chart</span>
+                Career Stats
+            </h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- Matches Played -->
+<div class="bg-surface-container-high rounded-xl p-md relative overflow-hidden group border border-outline-variant/10 hover:border-primary/30 transition-colors">
+<div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[48px] text-on-surface">sports_score</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Matches</p>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">142</p>
+</div>
+<!-- Win Rate -->
+<div class="bg-surface-container-high rounded-xl p-md relative overflow-hidden group border border-outline-variant/10 hover:border-primary/30 transition-colors">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Win Rate</p>
+<div class="flex items-end gap-1">
+<p class="font-display-lg text-display-lg text-primary leading-none">76</p>
+<span class="font-headline-lg text-title-md text-primary mb-1">%</span>
+</div>
+</div>
+<!-- Total Runs -->
+<div class="bg-surface-container-high rounded-xl p-md relative overflow-hidden border border-outline-variant/10">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Runs</p>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">3,450</p>
+<p class="font-body-sm text-body-sm text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> Top 5%
+                    </p>
+</div>
+<!-- Wickets -->
+<div class="bg-surface-container-high rounded-xl p-md relative overflow-hidden border border-outline-variant/10">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Wickets</p>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">89</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Econ: 6.4</p>
+</div>
+</div>
+</section>
+<!-- Recent Form -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-headline-lg text-title-md text-on-surface uppercase mb-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">history</span>
+                Recent Form
+            </h2>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary/20 border border-primary/50 flex items-center justify-center font-headline-lg text-title-md text-primary glow-primary">
+                    W
+                </div>
+<div class="w-12 h-12 rounded-full bg-primary/20 border border-primary/50 flex items-center justify-center font-headline-lg text-title-md text-primary glow-primary">
+                    W
+                </div>
+<div class="w-12 h-12 rounded-full bg-error/20 border border-error/50 flex items-center justify-center font-headline-lg text-title-md text-error">
+                    L
+                </div>
+<div class="flex-1 border-l border-outline-variant/30 pl-4 ml-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Last Match: <span class="text-on-surface font-semibold">Lost by 4 wkts</span></p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">vs. <span class="text-secondary">Royal Strikers</span></p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] z-50 flex justify-around items-center py-xs px-md max-w-lg rounded-full bg-surface-container/60 dark:bg-surface-container/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 rounded-full transition-all w-16 h-14">
+<span class="material-symbols-outlined text-[24px] mb-1">home</span>
+<span class="font-label-caps text-[10px] uppercase tracking-wider">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 rounded-full transition-all w-16 h-14">
+<span class="material-symbols-outlined text-[24px] mb-1">emoji_events</span>
+<span class="font-label-caps text-[10px] uppercase tracking-wider">Leagues</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 rounded-full transition-all w-16 h-14 relative -top-3">
+<div class="bg-primary text-on-primary rounded-full p-3 shadow-[0_4_20px_rgba(16,185,129,0.4)]">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 rounded-full transition-all w-16 h-14">
+<span class="material-symbols-outlined text-[24px] mb-1">stadium</span>
+<span class="font-label-caps text-[10px] uppercase tracking-wider">Turfs</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 rounded-full transition-all w-16 h-14">
+<span class="material-symbols-outlined text-[24px] mb-1">forum</span>
+<span class="font-label-caps text-[10px] uppercase tracking-wider">Chat</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grounds Hub - Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#003824",
+                    "surface-container": "#181f31",
+                    "surface-dim": "#0c1324",
+                    "on-tertiary": "#002e6a",
+                    "surface-container-low": "#141b2c",
+                    "surface": "#0c1324",
+                    "primary-container": "#10b981",
+                    "tertiary-container": "#71a1ff",
+                    "tertiary": "#adc6ff",
+                    "on-secondary-fixed": "#2a1700",
+                    "secondary-fixed": "#ffddb8",
+                    "secondary": "#ffb95f",
+                    "primary": "#4edea3",
+                    "outline": "#86948a",
+                    "on-primary-fixed": "#002113",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "on-tertiary-fixed": "#001a42",
+                    "tertiary-fixed-dim": "#adc6ff",
+                    "on-secondary-container": "#5b3800",
+                    "on-tertiary-container": "#00367a",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "inverse-surface": "#dce2fa",
+                    "secondary-container": "#ee9800",
+                    "surface-container-high": "#232a3c",
+                    "inverse-primary": "#006c49",
+                    "outline-variant": "#3c4a42",
+                    "surface-container-highest": "#2e3447",
+                    "on-error-container": "#ffdad6",
+                    "on-error": "#690005",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#2e3447",
+                    "on-surface": "#dce2fa",
+                    "primary-fixed-dim": "#4edea3",
+                    "on-primary-container": "#00422b",
+                    "on-background": "#dce2fa",
+                    "inverse-on-surface": "#293042",
+                    "tertiary-fixed": "#d8e2ff",
+                    "surface-bright": "#32394c",
+                    "on-surface-variant": "#bbcabf",
+                    "on-secondary": "#472a00",
+                    "on-tertiary-fixed-variant": "#004395",
+                    "surface-tint": "#4edea3",
+                    "primary-fixed": "#6ffbbe",
+                    "on-primary-fixed-variant": "#005236",
+                    "surface-container-lowest": "#070e1e",
+                    "error-container": "#93000a",
+                    "background": "#0c1324"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "1.5rem",
+                    "xl": "2.5rem",
+                    "xs": "0.25rem",
+                    "base": "4px",
+                    "gutter": "1rem",
+                    "sm": "0.5rem",
+                    "container-margin": "1rem",
+                    "md": "1rem"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Anton"
+                    ],
+                    "label-caps": [
+                            "Lexend"
+                    ],
+                    "headline-lg-mobile": [
+                            "Anton"
+                    ],
+                    "body-lg": [
+                            "Lexend"
+                    ],
+                    "headline-lg": [
+                            "Anton"
+                    ],
+                    "title-md": [
+                            "Lexend"
+                    ],
+                    "body-sm": [
+                            "Lexend"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "52px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "title-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Hide scrollbar for horizontal scroll areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Subtle background texture */
+        .bg-pattern-overlay {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg text-body-lg pb-[120px] antialiased bg-pattern-overlay min-h-screen relative">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md full-width top-0 sticky z-50 shadow-md bg-surface-container dark:bg-surface-container shadow-[0px_4px_20px_rgba(16,185,129,0.1)] flex justify-between items-center w-full px-container-margin py-sm border-b-0">
+<button class="text-primary dark:text-primary hover:bg-surface-container-high transition-colors hover:scale-95 duration-150 p-sm rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">location_on</span>
+</button>
+<h1 class="font-display-lg text-headline-lg italic tracking-tighter text-primary dark:text-primary uppercase">TURFMATCH</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/30 flex items-center justify-center text-primary dark:text-primary hover:bg-surface-container-high transition-colors hover:scale-95 duration-150 cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+</header>
+<!-- Page Header & Filters -->
+<section class="sticky top-[72px] z-40 bg-background/95 backdrop-blur-md pt-lg pb-md border-b border-surface-container shadow-sm">
+<div class="px-container-margin mb-md">
+<h2 class="font-title-md text-title-md text-on-surface">Grounds Hub <span class="text-primary">- Community</span></h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs mt-base">
+<span class="material-symbols-outlined text-[16px]">explore</span> Discover and book premium pitches near you
+            </p>
+</div>
+<div class="px-container-margin flex gap-sm overflow-x-auto no-scrollbar pb-xs">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps uppercase px-lg py-sm rounded-full whitespace-nowrap flex items-center gap-xs shadow-[0px_4px_20px_rgba(16,185,129,0.3)]">
+                All Grounds
+            </button>
+<button class="bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-caps text-label-caps uppercase px-lg py-sm rounded-full whitespace-nowrap border border-outline-variant flex items-center gap-xs">
+                Box Cricket
+            </button>
+<button class="bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-caps text-label-caps uppercase px-lg py-sm rounded-full whitespace-nowrap border border-outline-variant flex items-center gap-xs">
+                Net Practice
+            </button>
+<button class="bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-caps text-label-caps uppercase px-lg py-sm rounded-full whitespace-nowrap border border-outline-variant flex items-center gap-xs">
+                Full Ground
+            </button>
+</div>
+</section>
+<!-- Main Content Canvas -->
+<main class="px-container-margin py-lg flex flex-col gap-xl">
+<!-- Ground Card 1 (High Density Blinkit Style) -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 shadow-[0px_8px_30px_rgba(0,0,0,0.4)] flex flex-col relative group">
+<!-- Image Area -->
+<div class="h-56 w-full relative bg-surface-container-highest">
+<img alt="" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="A highly detailed, cinematic shot of a vibrant artificial turf box cricket arena in India at night under bright LED floodlights. The rich emerald green of the astroturf contrasts sharply with deep black shadows and neon orange safety netting. The mood is high-energy and modern athletic, reflecting a premium urban sports facility. The scene embodies a fast-paced, high-contrast Indian cricket aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUVG6pNhhiRLt7_2PXb888AdSFDXzl2cConq3f1CfBeWYyjHRgXfwsb2xwJCdeBgLJHaxeMAEYBUVPkJSfZ1v8PsBMRUqUWXzOivuhAnVZPI9ulr_1Zqmdxz5dCjEBymlAX9t6At9cWiclnJrKjunND7Ol2aBRD73GaCC3izICs4vh4_H7dYt8rVIlFjmI3YFglO_L0oWzPMXk0se633xJKyxQtwKMVA093nbLxB2i7Awtl6ss5LBsUvn2b_-VW6ALrRboZ4Dpw3U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-90"></div>
+<!-- Floating Badges -->
+<div class="absolute top-sm left-sm flex flex-col gap-xs z-10">
+<span class="bg-primary/90 backdrop-blur-sm text-on-primary font-label-caps text-label-caps uppercase px-sm py-base rounded shadow-md flex items-center gap-xs border border-primary-fixed">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span> Verified
+                    </span>
+<span class="bg-secondary/90 backdrop-blur-sm text-on-secondary font-label-caps text-label-caps uppercase px-sm py-base rounded shadow-md flex items-center gap-xs border border-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">qr_code_scanner</span> UPI Ready
+                    </span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="p-md -mt-lg relative z-20 flex flex-col gap-md">
+<div class="bg-surface-dim p-md rounded-lg border border-surface-container-high shadow-lg">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary uppercase italic tracking-tight leading-none">Koramangala Box</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px]">map</span> 2.5 km away • Hard Pitch
+                            </p>
+</div>
+<div class="bg-surface-bright px-sm py-xs rounded flex items-center gap-xs text-secondary font-title-md text-title-md border border-outline-variant/50 shadow-inner">
+                            4.8 <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Social Density Indicator -->
+<div class="bg-surface-container-low py-sm px-md rounded-md border-l-2 border-primary flex items-center gap-sm my-sm">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full bg-tertiary-container border border-surface-container flex items-center justify-center text-on-tertiary-container font-label-caps text-[10px]">T1</div>
+<div class="w-7 h-7 rounded-full bg-secondary-container border border-surface-container flex items-center justify-center text-on-secondary-container font-label-caps text-[10px]">T2</div>
+<div class="w-7 h-7 rounded-full bg-surface-bright border border-surface-container flex items-center justify-center text-on-surface font-label-caps text-[10px]"><span class="material-symbols-outlined text-[12px]">add</span></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface"><strong class="text-primary font-title-md">12 teams</strong> playing here today</p>
+</div>
+<!-- Action Row -->
+<div class="flex justify-between items-end mt-sm pt-sm border-t border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Starts at</span>
+<div class="flex items-baseline gap-xs">
+<span class="font-title-md text-title-md text-on-surface">₹800</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/hr</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-display-lg text-[22px] leading-[22px] uppercase px-xl py-sm rounded-lg shadow-[0px_4px_15px_rgba(16,185,129,0.4)] hover:scale-95 transition-transform skew-x-[-8deg] flex items-center gap-sm">
+<span class="skew-x-[8deg]">Book Now</span>
+<span class="material-symbols-outlined skew-x-[8deg] text-[20px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Ground Card 2 (Net Practice) -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 shadow-[0px_8px_30px_rgba(0,0,0,0.4)] flex flex-col relative group">
+<!-- Image Area -->
+<div class="h-56 w-full relative bg-surface-container-highest">
+<img alt="" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="A dynamic, high-contrast digital rendering of a professional outdoor cricket net practice facility at dusk. The scene features deep Saffron sunset skies contrasting against the Emerald Green artificial pitch and stark black chain-link fencing. Strong directional lighting highlights the texture of the pitch. The aesthetic captures the intense, premium-performance vibe of Indian athletic training grounds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDImQJfeT5KIolnrsxvaza_RHV-mhc2HH4y6wQAt5YeMKW5LmkQneDiLELxW7L8vQF3mbVM-zO8MCjpjG_72hYUNc5ArVPJawSwCrQauMbZyQTFK53qxQZTvt0BlRGrdBYK47fF_0x-H49Njth3UzSnn0AMElOx6e_Pq56Hz_8zKWDl6EY_nUQESa7GWtBWjjPwV4HqSOYOOQF9lgRHJlIkqlpAg0HMEgM7Bha8VkrSiFYWJg8ndlTr9Tx6_iEv0voX-Xwp_vfgWA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-90"></div>
+<!-- Floating Badges -->
+<div class="absolute top-sm left-sm flex flex-col gap-xs z-10">
+<span class="bg-primary/90 backdrop-blur-sm text-on-primary font-label-caps text-label-caps uppercase px-sm py-base rounded shadow-md flex items-center gap-xs border border-primary-fixed">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span> Verified
+                    </span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="p-md -mt-lg relative z-20 flex flex-col gap-md">
+<div class="bg-surface-dim p-md rounded-lg border border-surface-container-high shadow-lg">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface uppercase italic tracking-tight leading-none">HSR Nets Pro</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px]">map</span> 4.1 km away • Dusty Pitch
+                            </p>
+</div>
+<div class="bg-surface-bright px-sm py-xs rounded flex items-center gap-xs text-secondary font-title-md text-title-md border border-outline-variant/50 shadow-inner">
+                            4.5 <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Social Density Indicator -->
+<div class="bg-surface-container-low py-sm px-md rounded-md border-l-2 border-secondary flex items-center gap-sm my-sm">
+<span class="material-symbols-outlined text-secondary">group</span>
+<p class="font-body-sm text-body-sm text-on-surface"><strong class="text-secondary font-title-md">5 players</strong> practicing right now</p>
+</div>
+<!-- Action Row -->
+<div class="flex justify-between items-end mt-sm pt-sm border-t border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Starts at</span>
+<div class="flex items-baseline gap-xs">
+<span class="font-title-md text-title-md text-on-surface">₹400</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/hr</span>
+</div>
+</div>
+<button class="bg-surface-bright text-primary border border-primary/50 font-display-lg text-[22px] leading-[22px] uppercase px-xl py-sm rounded-lg hover:bg-surface-container-highest transition-colors skew-x-[-8deg] flex items-center gap-sm">
+<span class="skew-x-[8deg]">View Slot</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden bg-surface-container/90 dark:bg-surface-container/90 backdrop-blur-xl fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-md flex justify-around items-center py-md px-lg rounded-full z-50 border border-white/10 shadow-[0px_10px_30px_rgba(0,0,0,0.5)] border-t-0 border-b-0 shadow-2xl">
+<!-- Home (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label-caps text-label-caps uppercase mt-base">Home</span>
+</button>
+<!-- Grounds (Active) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary scale-110 transition-transform scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">stadium</span>
+<span class="font-label-caps text-label-caps uppercase mt-base text-primary">Grounds</span>
+</button>
+<!-- Create (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[24px]">add_circle</span>
+<span class="font-label-caps text-label-caps uppercase mt-base">Create</span>
+</button>
+<!-- Events (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[24px]">emoji_events</span>
+<span class="font-label-caps text-label-caps uppercase mt-base">Events</span>
+</button>
+<!-- Profile (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label-caps text-label-caps uppercase mt-base">Profile</span>
+</button>
+</nav>
+</body></html>

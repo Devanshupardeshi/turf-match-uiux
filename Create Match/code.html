@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#f4fcee",
+                      "primary": "#006e23",
+                      "surface-container-high": "#e3ebdd",
+                      "on-secondary-fixed-variant": "#474747",
+                      "on-surface": "#161d15",
+                      "surface-container-low": "#eef6e9",
+                      "on-secondary-container": "#646464",
+                      "on-primary-fixed-variant": "#005319",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#e2e2e2",
+                      "on-background": "#161d15",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "inverse-on-surface": "#ebf3e6",
+                      "tertiary-fixed": "#d3e4fe",
+                      "on-primary-fixed": "#002106",
+                      "on-primary-container": "#004112",
+                      "on-secondary-fixed": "#1b1b1b",
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "on-surface-variant": "#3e4a3c",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#5ce06d",
+                      "inverse-surface": "#2b322a",
+                      "surface-bright": "#f4fcee",
+                      "surface-dim": "#d4dccf",
+                      "tertiary": "#505f76",
+                      "surface-tint": "#006e23",
+                      "on-tertiary-fixed": "#0b1c30",
+                      "primary-fixed": "#7afd86",
+                      "on-tertiary-container": "#29384d",
+                      "on-primary": "#ffffff",
+                      "surface": "#f4fcee",
+                      "tertiary-container": "#92a2ba",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#5ce06d",
+                      "surface-container-highest": "#dde5d8",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed": "#e2e2e2",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "surface-variant": "#dde5d8",
+                      "primary-container": "#2eb84b",
+                      "outline-variant": "#bdcab8",
+                      "outline": "#6d7b6a",
+                      "secondary": "#5e5e5e",
+                      "surface-container": "#e8f0e3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "md": "12px",
+                      "xs": "4px",
+                      "margin-mobile": "12px",
+                      "xl": "24px",
+                      "sm": "8px",
+                      "base": "4px",
+                      "lg": "16px",
+                      "gutter": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Lexend"],
+                      "headline-lg": ["Lexend"],
+                      "headline-md": ["Lexend"],
+                      "body-sm": ["Lexend"],
+                      "label-bold": ["Lexend"],
+                      "display-lg": ["Lexend"],
+                      "body-lg": ["Lexend"]
+              },
+              "fontSize": {
+                      "label-sm": ["10px", {"lineHeight": "10px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+                      "headline-lg": ["24px", {"lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["18px", {"lineHeight": "22px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "label-bold": ["12px", {"lineHeight": "12px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                      "display-lg": ["40px", {"lineHeight": "40px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "body-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input:focus {
+            outline: none;
+            border-color: #2eb84b !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-outline-variant dark:border-outline backdrop-blur-md bg-opacity-90 bg-surface flex justify-between items-center px-margin-mobile h-14">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<h1 class="font-display-lg text-headline-md text-primary">TurfMatch</h1>
+</div>
+<button class="active:scale-95 transition-transform duration-150 p-2">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="mt-14 px-margin-mobile py-lg max-w-2xl mx-auto">
+<!-- Header Info -->
+<div class="mb-lg">
+<p class="font-label-bold text-label-bold text-primary uppercase mb-xs tracking-wider">Host a Match</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Match Configuration</h2>
+</div>
+<!-- Form Section -->
+<div class="space-y-lg">
+<!-- Match Title & Format -->
+<div class="space-y-sm">
+<label class="font-label-bold text-label-bold text-on-surface-variant block ml-xs">MATCH TITLE</label>
+<input class="w-full h-12 bg-surface-container-lowest border border-outline-variant rounded px-md font-body-lg text-on-surface placeholder-on-surface-variant/50 focus:ring-0 focus:border-primary-container transition-colors" placeholder="e.g. Sunday Morning Friendly" type="text"/>
+</div>
+<!-- Segmented Control for Format -->
+<div class="space-y-sm">
+<label class="font-label-bold text-label-bold text-on-surface-variant block ml-xs">MATCH FORMAT</label>
+<div class="grid grid-cols-3 border border-outline-variant rounded overflow-hidden">
+<button class="py-sm font-label-bold text-label-bold bg-inverse-surface text-inverse-on-surface border-r border-outline-variant">T20</button>
+<button class="py-sm font-label-bold text-label-bold bg-surface-container-lowest text-on-surface-variant border-r border-outline-variant hover:bg-surface-container transition-colors">ODI</button>
+<button class="py-sm font-label-bold text-label-bold bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors">TEST</button>
+</div>
+</div>
+<!-- Date & Time -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="space-y-sm">
+<label class="font-label-bold text-label-bold text-on-surface-variant block ml-xs">DATE</label>
+<div class="relative">
+<input class="w-full h-12 bg-surface-container-lowest border border-outline-variant rounded px-md font-body-lg text-on-surface focus:ring-0" type="date"/>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="font-label-bold text-label-bold text-on-surface-variant block ml-xs">TIME</label>
+<div class="relative">
+<input class="w-full h-12 bg-surface-container-lowest border border-outline-variant rounded px-md font-body-lg text-on-surface focus:ring-0" type="time"/>
+</div>
+</div>
+</div>
+<!-- Ground Search with Previews -->
+<div class="space-y-sm">
+<div class="flex justify-between items-end mb-xs">
+<label class="font-label-bold text-label-bold text-on-surface-variant block ml-xs">SELECT GROUND</label>
+<span class="text-primary font-label-bold text-label-sm uppercase">Nearby You</span>
+</div>
+<div class="relative mb-sm">
+<input class="w-full h-12 bg-surface-container-lowest border border-outline-variant rounded pl-12 pr-md font-body-lg text-on-surface focus:ring-0" placeholder="Search for turfs or grounds..." type="text"/>
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<!-- Horizontal Scroll Ground Previews -->
+<div class="flex overflow-x-auto gap-sm no-scrollbar pb-xs">
+<div class="flex-none w-48 border border-outline-variant rounded overflow-hidden bg-surface-container-lowest active:border-primary-container transition-all">
+<img class="h-24 w-full object-cover" data-alt="A high-contrast wide shot of a professional green cricket turf under bright midday sun with sharp shadows. The grass is perfectly manicured with vibrant white boundary lines. The surrounding environment is minimalist and modern, featuring clean architectural lines and a bright, airy atmosphere consistent with a light-mode high-performance sports app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAHvhNy-k0grn3ALwccxS0aFxvstQ3N25Y_yPbBxQMTe8j5Ls-WqDWlL8ZnXKhGIwv78-Y1zl3L_tYCY2XYbPmjVh1NG_7l6ZwW7XR4saWV2ifrM9nEpqXylydMVVNbHaLcerv_RxlSBn2einQO0qZapt_HWfOIfvnmR9PdTy6jthVYY8DDSMixxOFxfdQtek71PDIXcUm5_95UHCY6hwQ6YbMEByX8OF8zLwGQeXChcyoWJcC68N1nzpFR4r8jXd7B_v35sWnpuk"/>
+<div class="p-sm">
+<p class="font-label-bold text-label-bold text-on-surface truncate">Skyline Sports Arena</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2.4 km away</p>
+</div>
+</div>
+<div class="flex-none w-48 border border-primary text-primary-container bg-surface-container-high rounded overflow-hidden">
+<div class="relative">
+<img class="h-24 w-full object-cover" data-alt="Close up of a premium artificial cricket pitch with a professional texture and vivid green color. The lighting is crisp and uniform, highlighting the precision of the turf fibers. This modern athletic setting is presented in a bright, high-contrast light mode style, emphasizing speed and efficiency in a sports-focused digital interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtaPR4WytMaz9R0MKbU0wdYiipQ7mJPCUHc_yOh-B-ZlPfpwkBaqZBMPi40ljk7sFxDfzYDNLIT4DFM6eOgx20OOCssTfClKVr_2i7HwYY7X332GSY6XoX8oyaXXy-Fr-_1v6ba46qR7HklUHil0Wb7sy8NolLgOE2FwdupAgI34gqVkRhdb5DeYvIPquwm_GmWaWFvJp1EGenwIoC1m35-XrrjxrEvchKwtXcsQZXsHtleiqP3nuyHNe8G3XfUL7u54kBJquZOnU"/>
+<div class="absolute top-2 right-2 bg-primary text-on-primary p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div class="p-sm">
+<p class="font-label-bold text-label-bold text-on-primary-container truncate">Green Valley Turf</p>
+<p class="font-body-sm text-body-sm text-on-primary-container">Selected</p>
+</div>
+</div>
+<div class="flex-none w-48 border border-outline-variant rounded overflow-hidden bg-surface-container-lowest">
+<img class="h-24 w-full object-cover" data-alt="A cinematic low-angle shot of an outdoor cricket ground at sunrise, with soft golden light hitting the green surface. The background is a clean, minimalist cityscape with sharp outlines. The aesthetic is modern and energetic, designed for a fast-paced commerce app with high-contrast elements and a vibrant, crisp color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbUDMRwVZqi3Gap1izj7Kx8PA9ZP9vOFxBIl03OmqDrsI7s_GvB3uNgqpyxAOzkTdcdl0p_Fo3tDSsgesXU0cqn2Cf1brTccV8hUAeKkcGa77KFJqiXyUMwyoYm8MOwU5JqwjDcP35g2EitrRgyu5kKUqyC7aJDPHSsHcTj-JLMDYvSVWeXKBZ0CjYpw2b-6hPH78vwqqUflqUQdadM3uZQqgTbfWrR3C0p1Rexur7XVDT1TAObZMin4EopqmJWCVvWrfD4-qBjg8"/>
+<div class="p-sm">
+<p class="font-label-bold text-label-bold text-on-surface truncate">Apex Cricket Hub</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">4.1 km away</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Details Section -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md">
+<h3 class="font-label-bold text-label-bold text-on-surface-variant uppercase mb-md">Match Details</h3>
+<div class="grid grid-cols-2 gap-lg">
+<div class="space-y-sm">
+<label class="font-label-bold text-label-sm text-on-surface-variant block">PLAYER COUNT</label>
+<div class="flex items-center gap-md">
+<button class="w-8 h-8 flex items-center justify-center border border-outline text-on-surface rounded active:bg-surface-container">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="font-headline-md text-headline-md">22</span>
+<button class="w-8 h-8 flex items-center justify-center bg-inverse-surface text-inverse-on-surface rounded active:scale-90">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="font-label-bold text-label-sm text-on-surface-variant block">ENTRY FEE (₹)</label>
+<div class="relative">
+<input class="w-full h-10 bg-transparent border-b-2 border-outline focus:border-primary-container font-headline-md text-headline-md p-0 ring-0 focus:ring-0 border-t-0 border-x-0" type="number" value="250"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Urgent Message -->
+<div class="flex items-start gap-sm p-sm bg-error-container/30 border border-error/20 rounded-lg">
+<span class="material-symbols-outlined text-error text-[20px]">info</span>
+<p class="text-body-sm text-on-error-container">The ground "Green Valley Turf" is filling fast for this time slot. Post now to secure bookings.</p>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary-container text-on-primary-container font-label-bold text-body-lg h-14 rounded-xl flex items-center justify-center gap-sm active:scale-95 transition-all duration-200 shadow-sm">
+<span>Post Match</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 backdrop-blur-md bg-opacity-95 bg-surface border-t border-outline-variant">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl p-2 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_box</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">emoji_events</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+</body></html>

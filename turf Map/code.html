@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TurfMatch - Explore Turfs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom map pin animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+        .pin-pulse::before {
+            content: '';
+            position: absolute;
+            left: -50%; top: -50%; right: -50%; bottom: -50%;
+            border-radius: 50%;
+            border: 2px solid theme('colors.primary');
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#32394c",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "surface-container-high": "#232a3c",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "surface-container-highest": "#2e3447",
+                        "inverse-on-surface": "#293042",
+                        "background": "#0c1324",
+                        "on-secondary": "#472a00",
+                        "surface-container-lowest": "#070e1e",
+                        "secondary": "#ffb95f",
+                        "on-primary-fixed-variant": "#005236",
+                        "surface-tint": "#4edea3",
+                        "on-secondary-container": "#5b3800",
+                        "inverse-surface": "#dce2fa",
+                        "on-primary": "#003824",
+                        "outline-variant": "#3c4a42",
+                        "inverse-primary": "#006c49",
+                        "surface-dim": "#0c1324",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "on-tertiary-fixed": "#001a42",
+                        "on-primary-container": "#00422b",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#bbcabf",
+                        "on-surface": "#dce2fa",
+                        "surface-variant": "#2e3447",
+                        "on-primary-fixed": "#002113",
+                        "on-background": "#dce2fa",
+                        "secondary-fixed": "#ffddb8",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary-container": "#71a1ff",
+                        "primary": "#4edea3",
+                        "error": "#ffb4ab",
+                        "surface": "#0c1324",
+                        "outline": "#86948a",
+                        "on-tertiary-container": "#00367a",
+                        "on-tertiary": "#002e6a",
+                        "surface-container-low": "#141b2c",
+                        "primary-fixed": "#6ffbbe",
+                        "surface-container": "#181f31",
+                        "primary-container": "#10b981",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#d8e2ff",
+                        "tertiary": "#adc6ff",
+                        "primary-fixed-dim": "#4edea3",
+                        "secondary-container": "#ee9800"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "0.25rem",
+                        "container-margin": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2.5rem",
+                        "gutter": "1rem",
+                        "md": "1rem",
+                        "base": "4px",
+                        "sm": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Anton"],
+                        "title-md": ["Lexend"],
+                        "label-caps": ["Lexend"],
+                        "headline-lg": ["Anton"],
+                        "body-lg": ["Lexend"],
+                        "body-sm": ["Lexend"],
+                        "display-lg": ["Anton"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background h-screen w-screen overflow-hidden relative selection:bg-primary/30 font-body-lg text-body-lg">
+<!-- Ambient Texture Overlay -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-5 mix-blend-overlay" style="background-image: radial-gradient(circle at center, #ffffff 1px, transparent 1px); background-size: 16px 16px;"></div>
+<!-- Map Background Image -->
+<div class="absolute inset-0 z-0 bg-surface-dim">
+<img class="w-full h-full object-cover opacity-60 mix-blend-luminosity grayscale-[50%]" data-alt="A highly detailed, cinematic top-down satellite view of a dense urban cityscape at night, styled for a premium athletic app map interface. The map uses a deep navy and charcoal color palette, punctuated by subtle glowing emerald green and saffron accents that trace major roads and stadium locations. The mood is high-contrast, moody, and energetic, perfectly fitting a dark-mode, performance-focused design system." data-location="Mumbai" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn63bDEXhev58K_rLweqMkCJMsv8xbO84uDlRqpH3sYyxcvHPiZ1pKMsTJXYrm0KQBDt-Q6BIxh59ThvT29dn0VT48VVaQ9qjQdrdbmU6cx76TFh-bk2EHT37IVt5SCdcs-HYMkeCVh5yBLbSjHYniRSr_ukonpaOIyYWdKMxKXuzAH4Sn77AnCXhvllSL43O067VLlXnABfZ4u8pCZmN0o-mYCqmw1xvgtpTl9uG_DgvrDgnKXFkOgzbNIxIExVN7QtP4KzdY8NQ"/>
+</div>
+<!-- Top Navigation & Search Overlay -->
+<div class="absolute top-0 left-0 w-full z-40 p-4 pt-10 flex flex-col gap-4 bg-gradient-to-b from-background/90 to-transparent">
+<!-- Header Row -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 bg-surface-container-high/80 backdrop-blur-md rounded-full px-3 py-1.5 border border-outline-variant/30">
+<img alt="TurfMatch Logo" class="h-6 w-auto" data-alt="The official TurfMatch brand logo, featuring a sleek, high-contrast design with emerald green accents, rendered against a dark, transparent background. The logo embodies a premium athletic aesthetic, suitable for a fast-paced sports application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARGFa9lf_cIIVlwDPrVFMPHDNdGmvYlQMjDFIevYhcaTEwSLfeXjeHY9RI-mjpf0mteI2XwMaZcf32sXrmpXPYKotgxk9Xb1tOvSgFw_kZonshVo6f-BejRSpK-F5-SGsSZf5BvLxYY5tBLWiQR6yNAMwOmfCDEEEHHgLiM3aLTsBuoQ1xvOPdz4LH2HQIj0ixxSil_LCJr6HcZ2_9YuNzQ2s2eL-H-6yLIlAA5EX9Zuj7_qO8QH-5eiHCMYyR7jPy__RC-MLuKzo"/>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tighter italic uppercase mt-1">TURFMATCH</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-highest/80 backdrop-blur-md border border-outline-variant/30 flex items-center justify-center text-on-surface hover:bg-surface-bright transition-colors shadow-[0_4px_20px_rgba(16,185,129,0.1)]">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<!-- Search & Filter Row -->
+<div class="flex flex-col gap-3">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-12 bg-surface-container-highest/80 backdrop-blur-xl border border-outline-variant/30 rounded-full pl-12 pr-4 text-body-lg text-on-surface focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 shadow-[0_4px_20px_rgba(0,0,0,0.3)] placeholder:text-on-surface-variant" placeholder="Search areas or turfs..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-surface-bright text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Filter Chips (Horizontal Scroll) -->
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x" style="-ms-overflow-style: none; scrollbar-width: none;">
+<button class="snap-start shrink-0 px-4 py-1.5 rounded-full border border-primary text-primary bg-primary/10 font-label-caps text-label-caps whitespace-nowrap shadow-[0_0_10px_rgba(78,222,163,0.2)]">
+                    5-A-SIDE
+                </button>
+<button class="snap-start shrink-0 px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant bg-surface-container-highest/60 backdrop-blur-sm font-label-caps text-label-caps whitespace-nowrap hover:border-primary/50 hover:text-primary transition-colors">
+                    BOX CRICKET
+                </button>
+<button class="snap-start shrink-0 px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant bg-surface-container-highest/60 backdrop-blur-sm font-label-caps text-label-caps whitespace-nowrap hover:border-primary/50 hover:text-primary transition-colors">
+                    NETS
+                </button>
+<button class="snap-start shrink-0 px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant bg-surface-container-highest/60 backdrop-blur-sm font-label-caps text-label-caps whitespace-nowrap hover:border-primary/50 hover:text-primary transition-colors">
+                    FULL GROUND
+                </button>
+</div>
+</div>
+</div>
+<!-- Map Pins -->
+<!-- Inactive Pin 1 -->
+<div class="absolute z-10 flex flex-col items-center" style="top: 35%; left: 20%;">
+<div class="w-8 h-8 bg-surface-container-high border-2 border-outline-variant rounded-full flex items-center justify-center text-on-surface-variant shadow-lg backdrop-blur-sm transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-[18px]">stadium</span>
+</div>
+</div>
+<!-- Inactive Pin 2 -->
+<div class="absolute z-10 flex flex-col items-center" style="top: 25%; left: 65%;">
+<div class="w-8 h-8 bg-surface-container-high border-2 border-outline-variant rounded-full flex items-center justify-center text-on-surface-variant shadow-lg backdrop-blur-sm transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-[18px]">stadium</span>
+</div>
+</div>
+<!-- Active Pin (Selected) -->
+<div class="absolute z-20 flex flex-col items-center" style="top: 50%; left: 45%;">
+<div class="relative pin-pulse w-12 h-12 bg-primary border-2 border-surface rounded-full flex items-center justify-center text-on-primary shadow-[0_0_20px_rgba(78,222,163,0.6)] z-20 transform -translate-y-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stadium</span>
+</div>
+<div class="mt-1 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded border border-outline-variant/50 font-label-caps text-[10px] text-on-surface whitespace-nowrap shadow-md">
+            ₹1,200/hr
+        </div>
+</div>
+<!-- Floating Bento Card (Selected Turf Details) -->
+<div class="absolute bottom-[100px] left-4 right-4 z-40">
+<div class="bg-surface-container-high/95 backdrop-blur-xl rounded-xl border border-outline-variant/30 shadow-[0_8px_32px_rgba(0,0,0,0.6),0_4px_20px_rgba(16,185,129,0.15)] overflow-hidden">
+<div class="flex p-3 gap-3">
+<!-- Image Section -->
+<div class="w-[100px] shrink-0 h-[100px] rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A high-quality, dramatic photograph of an outdoor artificial turf cricket pitch under intense stadium floodlights at night. The vibrant emerald green of the astroturf contrasts sharply with the deep black surrounding environment. The lighting is cinematic, highlighting the texture of the grass and creating a premium, competitive atmosphere suitable for a sports booking app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDJrAhawzcILnpcLw7_lPU3d57aNVU5w2zUrRCLlrzU_Qv5g4JcVyvJI06y9eWnM7MJI4wMRpS8M-Pi4qzbsylQK1bpI1C544EJw9HpTO2kc8j2Qx9HxV4SwDuDrbhC_5fVD6BEklc2SHVz6oSNeKwlcGXrcUjpig8JSLKDq4OzNVW23dKeMbD-3qfW8EWwV68yicOGHQSgY3V7iZ2S5Vt7K2oGDATP25OITt7VavI-7Pyaanb1nukcwAsfZ6so_J3q0uvOpPZvnU"/>
+<div class="absolute top-1 left-1 bg-surface-container-high/80 backdrop-blur-sm px-1.5 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-secondary">star</span>
+<span class="font-label-caps text-[10px] text-secondary">4.8</span>
+</div>
+</div>
+<!-- Details Section -->
+<div class="flex-1 flex flex-col justify-between py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">LIONS DEN ARENA</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">location_on</span> 2.4 km</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-primary font-semibold">₹1,200/hr</span>
+</div>
+</div>
+<button class="mt-2 w-full bg-primary text-on-primary font-headline-lg-mobile text-[20px] uppercase py-2 rounded-lg shadow-[0_4px_15px_rgba(78,222,163,0.3)] hover:bg-primary-fixed transition-colors transform hover:-translate-y-0.5 duration-150 italic tracking-wide">
+                        Quick Book
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Shared Component) -->
+<nav class="fixed bottom-6 mx-auto w-[92%] rounded-full left-0 right-0 bg-surface-container-highest/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5),0_4px_20px_rgba(16,185,129,0.3)] z-50">
+<div class="flex justify-around items-center px-4 py-2 h-16">
+<!-- Inactive: Home -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:text-primary transition-all w-16">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-caps text-[10px] tracking-widest hidden md:block">Home</span>
+</button>
+<!-- Inactive: Leagues -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:text-primary transition-all w-16">
+<span class="material-symbols-outlined mb-1">workspace_premium</span>
+<span class="font-label-caps text-[10px] tracking-widest hidden md:block">Leagues</span>
+</button>
+<!-- Inactive: Create -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:text-primary transition-all w-16">
+<span class="material-symbols-outlined mb-1">add_circle</span>
+<span class="font-label-caps text-[10px] tracking-widest hidden md:block">Create</span>
+</button>
+<!-- Active: Turfs -->
+<div class="relative w-16 flex justify-center -top-3">
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full h-14 w-14 shadow-[0_0_15px_rgba(78,222,163,0.5)] scale-95 duration-150 ease-in-out border-4 border-surface-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stadium</span>
+</button>
+</div>
+<!-- Inactive: Chat -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:text-primary transition-all w-16">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-caps text-[10px] tracking-widest hidden md:block">Chat</span>
+</button>
+</div>
+</nav>
+</body></html>

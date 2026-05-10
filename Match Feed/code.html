@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f4fcee",
+                        "primary": "#006e23",
+                        "surface-container-high": "#e3ebdd",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-surface": "#161d15",
+                        "surface-container-low": "#eef6e9",
+                        "on-secondary-container": "#646464",
+                        "on-primary-fixed-variant": "#005319",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#e2e2e2",
+                        "on-background": "#161d15",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "inverse-on-surface": "#ebf3e6",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-primary-fixed": "#002106",
+                        "on-primary-container": "#004112",
+                        "on-secondary-container": "#646464",
+                        "on-surface-variant": "#3e4a3c",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#5ce06d",
+                        "inverse-surface": "#2b322a",
+                        "surface-bright": "#f4fcee",
+                        "surface-dim": "#d4dccf",
+                        "tertiary": "#505f76",
+                        "surface-tint": "#006e23",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "primary-fixed": "#7afd86",
+                        "on-tertiary-container": "#29384d",
+                        "on-primary": "#ffffff",
+                        "surface": "#f4fcee",
+                        "tertiary-container": "#92a2ba",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#5ce06d",
+                        "surface-container-highest": "#dde5d8",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-variant": "#dde5d8",
+                        "primary-container": "#2eb84b",
+                        "outline-variant": "#bdcab8",
+                        "outline": "#6d7b6a",
+                        "secondary": "#5e5e5e",
+                        "surface-container": "#e8f0e3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "12px",
+                        "xs": "4px",
+                        "margin-mobile": "12px",
+                        "xl": "24px",
+                        "sm": "8px",
+                        "base": "4px",
+                        "lg": "16px",
+                        "gutter": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Lexend"],
+                        "headline-lg": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "body-sm": ["Lexend"],
+                        "label-bold": ["Lexend"],
+                        "display-lg": ["Lexend"],
+                        "body-lg": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["10px", {"lineHeight": "10px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+                        "headline-lg": ["24px", {"lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["18px", {"lineHeight": "22px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-bold": ["12px", {"lineHeight": "12px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "display-lg": ["40px", {"lineHeight": "40px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 backdrop-blur-md bg-opacity-90 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">CURRENT LOCATION</span>
+<span class="font-headline-md text-headline-md text-on-surface leading-tight">Baner, Pune</span>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-transform active:scale-95 duration-150">
+<span class="material-symbols-outlined text-on-surface" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-margin-mobile">
+<!-- Filter Chips -->
+<div class="flex gap-gutter overflow-x-auto pb-md no-scrollbar">
+<button class="flex-none px-lg py-sm rounded-full border border-primary bg-primary text-on-primary font-label-bold text-label-bold active:scale-95 transition-all">
+                Near Me
+            </button>
+<button class="flex-none px-lg py-sm rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-bold text-label-bold active:scale-95 transition-all">
+                This Weekend
+            </button>
+<button class="flex-none px-lg py-sm rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-bold text-label-bold active:scale-95 transition-all">
+                Open to Guests
+            </button>
+<button class="flex-none px-lg py-sm rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-bold text-label-bold active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px] align-middle" data-icon="tune">tune</span> Filters
+            </button>
+</div>
+<!-- Section Title & Urgency -->
+<div class="mt-md mb-sm flex justify-between items-end">
+<div>
+<span class="font-label-bold text-label-bold text-error uppercase">Live Feed</span>
+<h1 class="font-headline-lg text-headline-lg">Matches Near You</h1>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">24 MATCHES FOUND</span>
+</div>
+<!-- Match Cards List -->
+<div class="flex flex-col gap-sm">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden active:bg-surface-container transition-colors">
+<div class="flex gap-sm p-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-none">
+<img class="w-full h-full object-cover" data-alt="A lush green professional cricket ground in Pune at sunset, featuring perfectly manicured grass and white boundary markings. The lighting is warm and cinematic, highlighting the vibrant texture of the turf and the surrounding modern sports complex infrastructure. The overall aesthetic is energetic and high-contrast, fitting a premium sports match application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg3IzHJD5A-4SZY_qRcemrGJG2VD_apFeWXywkkEsZBgH2t0u6pXivxdzSqc78pqV4wg-AfYq5MHCL-3fN3TI8UA7M1m9AYsMpivBy-n_4bRdoo-EZl7i1I_IBnchnxPC1U8h9ovxS0GWmeE4bc7bGbB6CBX7jh-tdNhkPbSv8ISREASdG3Vt49-c37eJnwx398TG3cOnFXZERTQBB2reYeA6m1jRZMiiqQcwrevnOpvecqBD0Kq2ONORjw1fQhi0OShRXfxy21Xc"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface">The Pavilion Arena</h3>
+<span class="bg-error text-on-error font-label-bold text-label-sm px-1.5 py-0.5 rounded-sm">LIVE</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span class="font-body-sm text-body-sm">Today, 07:00 PM</span>
+</div>
+</div>
+<div class="flex justify-between items-center mt-xs">
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-sm py-0.5 rounded">3 PLAYERS NEEDED</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-secondary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a professional male athlete in a white jersey, set against a blurred stadium background with bright day-time lighting. The style is clean and high-contrast, emphasizing focus and determination on the subject's face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZatRRL1Pukbp87b5CJg6mKq6xN7ovBqoH1kPqyaay_FchsoCZjo-gyC9aMO7yhPseQ95Dm_-Kuve6LvsDiGfNRq4mJuM872c9AieEML5KYGsXgg825BBUU8-LwMiWqIJXioQq-Yx-bRx0OAXN9_IWGGBMlTg7pGZDeIpajqY28OHfy28RppkdrC-Loqd91PiHe7-JiQcrbzCREAjVJvVtDOsyNvpulihjviZPyu2s362Bom8m4E5-MxNKQ9QFIS4nUXVdx5v4XZQ"/>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-secondary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a smiling female sports enthusiast with tied-back hair, wearing an athletic top. The lighting is soft and natural, against a modern outdoor sports facility backdrop, conveying a friendly and active personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD65pJ1sDylYau8od967EK001EBt_nzDnAizv-GdCUPfdc4sWTF8s2UZGYITcNQ59bFBFS4nPLqRJhmfxWBh2nulwoGyw_IwboGJjsEAFQwf_PsS8cHPWteasRTWWEb2uPrWiygW81CioXVGj9mJgRbQ6DbcIyd-zHk5vC5qA9dpncfgu0SI41fva7i-mL8eOHBdMWmJ9qY1NEUqi3V96chJZfbapNjJC7Tnes4NPlfk9vkS-TtsdSFQtWW2_4fUTzo9btnUVDfUwM"/>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-[8px]">+5</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-sm pb-sm">
+<button class="w-full bg-primary py-md rounded-xl text-on-primary font-headline-md text-headline-md active:scale-95 transition-transform flex items-center justify-center gap-sm">
+                        Request to Join
+                    </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden active:bg-surface-container transition-colors">
+<div class="flex gap-sm p-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-none">
+<img class="w-full h-full object-cover" data-alt="A vibrant night-time view of a floodlit cricket stadium with deep blue sky and bright stadium lights. The focus is on the crisp 1px lines of the pitch and the high-contrast shadows on the green turf. The image evokes a sense of professional evening sports excitement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkVwbgUOD2-yEre4TAVWYkq3MCpX9iTbTlcfBAypCtXjY6tQ7wP4lm6sN5AcOHgg74X-TkTMcn_TsrpMF5B02okTD0VxNJY9GZnnpefiuO2-NG_Bg3xJVOLrgwl-gT2jdx7ogx1l3meIDSwbQTmms_VDemmy0R_ZCgr3fGA_DT3ZI36u07C17h4lW7YuPg1D0REJB3YjO79FhWh00k8aWfzaQrF4ZgTFFiw3RPWcdaberJ4hxmX6RZg4Y2rp1gnvRt1dxmXHo3zl0"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface">Deccan Gymkhana</h3>
+<span class="bg-inverse-surface text-inverse-on-surface font-label-bold text-label-sm px-1.5 py-0.5 rounded-sm">FILLING FAST</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span class="font-body-sm text-body-sm">Sat, 08:30 AM</span>
+</div>
+</div>
+<div class="flex justify-between items-center mt-xs">
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-sm py-0.5 rounded">1 PLAYER NEEDED</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-secondary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young male cricketer looking forward with a confident gaze, wearing a team jersey. The background is a bright, sunlit sports field. High-contrast colors and sharp details reflect the energetic spirit of the game." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCoKUPGJIworectt7KWHwZEtuQYS-9dHmhNscQ1iBOJGyPw5EEmbWxpc4TgLUCVmdqf1wtlb6nkFquIcfeupszKe5YPRSl6WPAz8N2A4FwbUfsmB43pdZCr06AJofZ2cBnRUdyPwRc92zZGhWfrC-N5d78a5j91GXAib1ApShMGJsm1MZA5VRlN9nY26Jc28jlSxxaLo1DWtQCRbPYW5E-uvOKo7B-pZlxkO1uw7jeCyHyirot9vDE6GO1qXJUdTmZEGav93e70Oo"/>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-[8px]">+10</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-sm pb-sm">
+<button class="w-full bg-primary py-md rounded-xl text-on-primary font-headline-md text-headline-md active:scale-95 transition-transform flex items-center justify-center gap-sm">
+                        Request to Join
+                    </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden active:bg-surface-container transition-colors opacity-80">
+<div class="flex gap-sm p-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-none">
+<img class="w-full h-full object-cover grayscale" data-alt="Detail shot of a professional leather cricket ball on a grass pitch, with macro-focus on the stitching. The background shows blurred players in motion under clear morning light. The color palette emphasizes deep reds and natural greens with a sharp, modern photographic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7q8N7dgWu_vqB6XXwJztBivT5OCjb_xOQ3qODZPyeT204D91VFLGrF9U3WUzoWUBMasCuwj7DWvV3Iq6YJLuxn0t7mjgJcZ3U84AGXuJNeoOE8kxu4lNRVHYwiU-6H1E3ODnhdyp4YFKxtZGPR0kAl3BDmAZv7lkBqp1FktGMH4bupFimh518Cy81uQPv1CEFKRFsjXoBUIsqe-C9NPwdNy8ad9o4k8MjguzK4g1UEb6bMqrhmyK6ItmF5yat9L7M54rHVJbQf6g"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface">Balewadi High St. Turf</h3>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span class="font-body-sm text-body-sm">Sat, 11:00 AM</span>
+</div>
+</div>
+<div class="flex justify-between items-center mt-xs">
+<span class="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-sm py-0.5 rounded">FULL</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-secondary-container flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-surface-variant"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-sm pb-sm">
+<button class="w-full bg-secondary-container py-md rounded-xl text-on-secondary-container font-headline-md text-headline-md cursor-not-allowed" disabled="">
+                        Slot Full
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 backdrop-blur-md bg-opacity-95 bg-surface border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl p-2 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+<!-- FAB for quick action -->
+<button class="fixed bottom-24 right-margin-mobile w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform duration-150 z-40 border-2 border-on-primary">
+<span class="material-symbols-outlined text-[32px]" data-icon="sports_cricket" style="font-variation-settings: 'FILL' 1;">sports_cricket</span>
+</button>
+</body></html>

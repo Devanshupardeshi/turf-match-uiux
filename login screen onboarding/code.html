@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TurfMatch - Premium Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Lexend:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#bbcabf",
+                        "inverse-primary": "#006c49",
+                        "primary-container": "#10b981",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "error-container": "#93000a",
+                        "surface-variant": "#2e3447",
+                        "inverse-surface": "#dce1fb",
+                        "on-tertiary-container": "#31394d",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "tertiary": "#bec6e0",
+                        "on-primary": "#003824",
+                        "surface-container-low": "#151b2d",
+                        "surface-bright": "#33394c",
+                        "surface-container-high": "#23293c",
+                        "primary": "#4edea3",
+                        "on-background": "#dce1fb",
+                        "outline-variant": "#3c4a42",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#191f31",
+                        "secondary-fixed-dim": "#45dfa4",
+                        "primary-fixed-dim": "#4edea3",
+                        "on-secondary-fixed": "#002114",
+                        "surface": "#0c1324",
+                        "on-surface": "#dce1fb",
+                        "surface-tint": "#4edea3",
+                        "on-primary-fixed": "#002113",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#283044",
+                        "on-secondary-fixed-variant": "#005137",
+                        "secondary": "#45dfa4",
+                        "inverse-on-surface": "#2a3043",
+                        "outline": "#86948a",
+                        "secondary-fixed": "#68fcbf",
+                        "background": "#0c1324",
+                        "on-secondary-container": "#00452e",
+                        "on-primary-container": "#00422b",
+                        "primary-fixed": "#6ffbbe",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#dae2fd",
+                        "surface-container-highest": "#2e3447",
+                        "secondary-container": "#00bd85",
+                        "on-tertiary-fixed": "#131b2e",
+                        "surface-container-lowest": "#070d1f",
+                        "on-secondary": "#003825",
+                        "tertiary-container": "#9ba2bb",
+                        "surface-dim": "#0c1324",
+                        "on-primary-fixed-variant": "#005236"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-margin": "2.5rem",
+                        "gutter": "1rem",
+                        "bento-gap": "1rem",
+                        "container-padding": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Anton"],
+                        "headline-lg": ["Anton"],
+                        "display-hero": ["Anton"],
+                        "body-lg": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "stat-lg": ["Anton"],
+                        "micro-label": ["Lexend"],
+                        "headline-lg-mobile": ["Anton"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "900"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.01em", "fontWeight": "900"}],
+                        "display-hero": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "stat-lg": ["56px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "900"}],
+                        "micro-label": ["10px", {"lineHeight": "1.2", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "900"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .emerald-glow {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen relative overflow-hidden flex flex-col justify-between items-center px-container-padding py-section-margin">
+<!-- Ambient Background Lighting -->
+<div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-32 -left-32 w-96 h-96 bg-primary-container/20 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-1/4 -right-32 w-[30rem] h-[30rem] bg-secondary-container/10 rounded-full blur-[120px]"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-md relative z-10 flex flex-col flex-grow justify-center items-center">
+<!-- Hero/Logo Section -->
+<div class="text-center mb-12 w-full flex flex-col items-center">
+<h1 class="font-display-hero text-display-hero text-on-surface uppercase italic mb-2 tracking-tighter">TurfMatch</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[280px] mx-auto text-center">Enter the arena. Own the pitch. Premium access verified via OTP.</p>
+</div>
+<!-- Bento Box Form Container -->
+<div class="w-full bg-surface-container/60 backdrop-blur-2xl rounded-xl p-8 border border-white/5 relative">
+<span class="font-micro-label text-micro-label text-primary uppercase absolute top-4 left-6">Access Control</span>
+<div class="mt-8 space-y-6 w-full">
+<!-- Phone Input Field -->
+<div class="relative w-full">
+<label class="font-body-md text-body-md text-on-surface-variant block mb-2" for="phone">Mobile Number</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-on-surface-variant">smartphone</span>
+<input class="w-full bg-surface-container-high border-0 border-b-2 border-surface-container-highest focus:border-primary focus:ring-0 text-on-surface font-body-lg text-body-lg px-12 py-4 rounded-t-DEFAULT transition-colors placeholder:text-on-surface-variant/50" id="phone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full bg-primary-container text-on-primary font-headline-md text-headline-md uppercase py-4 rounded-DEFAULT emerald-glow hover:bg-primary transition-all active:scale-95 flex justify-center items-center gap-2">
+                    Get OTP
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+</div>
+<div class="mt-6 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant/70 text-sm">By continuing, you agree to our <a class="text-primary hover:underline" href="#">Terms</a> &amp; <a class="text-primary hover:underline" href="#">Privacy Policy</a>.</p>
+</div>
+</div>
+</main>
+<!-- Contextual Suppressions applied: BottomNavBar and TopAppBar are omitted due to Top-Level Transactional Intent (Onboarding/Login). -->
+</body></html>

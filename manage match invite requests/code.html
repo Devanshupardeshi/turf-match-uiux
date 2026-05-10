@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organizer Dashboard - Pending Requests</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#ffddb8",
+                      "background": "#0c1324",
+                      "on-secondary-container": "#5b3800",
+                      "secondary": "#ffb95f",
+                      "inverse-on-surface": "#293042",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "outline": "#86948a",
+                      "on-tertiary": "#002e6a",
+                      "surface-tint": "#4edea3",
+                      "on-surface": "#dce2fa",
+                      "on-primary-fixed": "#002113",
+                      "error": "#ffb4ab",
+                      "surface-dim": "#0c1324",
+                      "on-primary-fixed-variant": "#005236",
+                      "tertiary-container": "#71a1ff",
+                      "on-tertiary-fixed": "#001a42",
+                      "secondary-container": "#ee9800",
+                      "surface-container-lowest": "#070e1e",
+                      "on-secondary": "#472a00",
+                      "on-error": "#690005",
+                      "surface-container-highest": "#2e3447",
+                      "tertiary-fixed": "#d8e2ff",
+                      "on-primary-container": "#00422b",
+                      "primary-fixed": "#6ffbbe",
+                      "surface-container-low": "#141b2c",
+                      "surface-bright": "#32394c",
+                      "tertiary-fixed-dim": "#adc6ff",
+                      "tertiary": "#adc6ff",
+                      "on-primary": "#003824",
+                      "on-tertiary-fixed-variant": "#004395",
+                      "error-container": "#93000a",
+                      "on-tertiary-container": "#00367a",
+                      "surface-variant": "#2e3447",
+                      "inverse-surface": "#dce2fa",
+                      "inverse-primary": "#006c49",
+                      "on-surface-variant": "#bbcabf",
+                      "primary-container": "#10b981",
+                      "surface": "#0c1324",
+                      "outline-variant": "#3c4a42",
+                      "on-error-container": "#ffdad6",
+                      "surface-container": "#181f31",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "primary-fixed-dim": "#4edea3",
+                      "on-secondary-fixed": "#2a1700",
+                      "surface-container-high": "#232a3c",
+                      "primary": "#4edea3",
+                      "on-background": "#dce2fa"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "2.5rem",
+                      "xs": "0.25rem",
+                      "sm": "0.5rem",
+                      "lg": "1.5rem",
+                      "container-margin": "1rem",
+                      "md": "1rem",
+                      "gutter": "1rem",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "title-md": [
+                              "Lexend"
+                      ],
+                      "headline-lg": [
+                              "Anton"
+                      ],
+                      "body-lg": [
+                              "Lexend"
+                      ],
+                      "label-caps": [
+                              "Lexend"
+                      ],
+                      "headline-lg-mobile": [
+                              "Anton"
+                      ],
+                      "display-lg": [
+                              "Anton"
+                      ],
+                      "body-sm": [
+                              "Lexend"
+                      ]
+              },
+              "fontSize": {
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .texture-overlay {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg antialiased min-h-screen relative overflow-x-hidden">
+<!-- Background Texture -->
+<div class="fixed inset-0 texture-overlay pointer-events-none z-0"></div>
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim shadow-[0_4px_20px_rgba(16,185,129,0.1)] docked full-width top-0 z-40 bg-surface-container-low border-b border-outline-variant/20 flex justify-between items-center w-full px-container-margin h-20 relative">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed text-2xl">location_on</span>
+<h1 class="font-headline-lg text-headline-lg-mobile text-primary tracking-tighter italic uppercase">TURFMATCH</h1>
+</div>
+<div>
+<img alt="User Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary" data-alt="A close-up portrait of a young man, softly lit with dramatic shadows against a dark background, embodying a confident, athletic persona. The image is styled with a high-contrast aesthetic, utilizing deep shadows and subtle emerald highlights. The man's expression is focused, fitting the energetic, sports-centric vibe of the application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5XKQfMS3YC-Cff4jp4LKq3YEDmTV276mNZ6MV6FMh6H3hcNr5_vWq_4HP1SHbPJUhGcFQW585ZLqepe-ermLRdmHad_nksHzq4fkgWqhCpPOutN6LAWbvcoLfl399xpDMUT3ePq_3K_y9piU7hT5QwJUty9FZS1409HhsWUnwhFnEkuSBOU71xTNtgZuc9P_AsMmwEscYZ3oZomIvHKNiP2KGWERXiXEIxeE9uYzcLJWo0kNawjYUdR3hyfA86uRXoLPKK2D5aIQ"/>
+</div>
+</header>
+<main class="relative z-10 px-container-margin py-lg pb-32 max-w-4xl mx-auto">
+<!-- Match Header / Summary -->
+<section class="mb-xl">
+<div class="bg-surface-container rounded-xl p-lg shadow-[0_4px_20px_rgba(16,185,129,0.1)] relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none"></div>
+<div class="relative z-10">
+<p class="font-label-caps text-label-caps text-secondary mb-xs">Match Organizer Dashboard</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-sm">Weekend Warriors @ Green Park</h2>
+<div class="flex items-center gap-md text-on-surface-variant font-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">calendar_today</span> Sat, 24 Oct</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">schedule</span> 18:00 - 20:00</span>
+</div>
+<div class="mt-md flex items-center justify-between border-t border-outline-variant/30 pt-md">
+<div class="flex gap-lg">
+<div>
+<p class="font-headline-lg text-headline-lg text-primary">3</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Pending</p>
+</div>
+<div>
+<p class="font-headline-lg text-headline-lg text-secondary">2</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Slots Left</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pending Requests List (Bento-ish rows) -->
+<section>
+<h3 class="font-title-md text-title-md text-on-surface mb-md">Player Requests</h3>
+<div class="grid grid-cols-1 gap-md">
+<!-- Request Item 1 -->
+<div class="bg-surface-container-high rounded-xl p-md flex flex-col sm:flex-row items-center gap-md border border-outline-variant/20 hover:border-primary/50 transition-colors shadow-sm">
+<div class="flex items-center gap-md w-full sm:w-auto">
+<img alt="Player 1" class="w-16 h-16 rounded-lg object-cover" data-alt="Portrait of an Indian male athlete with a focused expression, softly lit from the side. The image uses a dark, moody background with a hint of warm Saffron light, emphasizing the high-contrast, premium aesthetic of a sports app. The subject exudes energy and readiness for a match." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEn5K2VdxBwQ-6rC1ncPawbOF0kdPMlOPgFSjyptEbXEC0-So9aaOuKv_I7Nd0QmAQZvUg9pwoJkwiZu65vC6XMQymjwkFd-Uuxnlvvz6RQcUwcVRQjSRvY2j8kyxdkG-CfPXtw-mTCZc2VPYETeOiyCl3zNmXsQ42KHj0a683Vu5gdtBrRhNSD5YpKeA-Ov4-oZjsNH0s5icUivxceVixtiFXWFPw4KUT5qZP84PNbki8UkxyGfTiS9YEvuZUnw4zHbAI9S-p2o8"/>
+<div class="flex-grow">
+<h4 class="font-title-md text-title-md text-on-surface">Rahul Sharma</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded font-label-caps text-[10px] uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">sports_cricket</span> All-Rounder</span>
+</div>
+</div>
+</div>
+<div class="flex flex-row sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto ml-auto gap-4 sm:gap-1">
+<div class="flex flex-col items-center sm:items-end">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary leading-none">95%</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Reliability</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-transparent border border-outline-variant text-on-surface-variant px-4 py-2 rounded-lg font-label-caps text-label-caps uppercase hover:bg-surface-variant hover:text-on-surface transition-colors">Decline</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-caps text-label-caps uppercase italic shadow-[0_0_15px_rgba(78,222,163,0.3)] hover:scale-95 transition-transform">Accept</button>
+</div>
+</div>
+</div>
+<!-- Request Item 2 -->
+<div class="bg-surface-container-high rounded-xl p-md flex flex-col sm:flex-row items-center gap-md border border-outline-variant/20 hover:border-primary/50 transition-colors shadow-sm">
+<div class="flex items-center gap-md w-full sm:w-auto">
+<img alt="Player 2" class="w-16 h-16 rounded-lg object-cover" data-alt="Portrait of a young sportsman against a dark background, illuminated by subtle cool blue and emerald green rim lighting. The image captures a sense of determination and modern athleticism, fitting a high-end sports application. The lighting creates a dramatic, high-contrast effect." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX3aHyUskKeHWukZu8WfAiLVPveIaIF_-sYivZb0zABdtpwoVDSync8KO9fqVFIg0zS5nEDB_7de3Yn-yb78mvFd9BGNLdjioNR8Fmas1i6fM30qndockZYEBZOxmkQNzGmlId-INyiDbO59nwZGMNSGzy1riyfQvI640TcojOwfhjexMLGV9Z_4JSuB7VOEkYkBjhrsb6b782UpjMF6LvYuaKPDNjjBSVN2m5fE9aZKreuVMo6JJrhJ9lXyXgTmWyMCGJD0p4Dz4"/>
+<div class="flex-grow">
+<h4 class="font-title-md text-title-md text-on-surface">Vikram Singh</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-surface-bright text-on-surface px-2 py-0.5 rounded font-label-caps text-[10px] uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">sports_baseball</span> Bowler</span>
+</div>
+</div>
+</div>
+<div class="flex flex-row sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto ml-auto gap-4 sm:gap-1">
+<div class="flex flex-col items-center sm:items-end">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary leading-none">88%</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Reliability</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-transparent border border-outline-variant text-on-surface-variant px-4 py-2 rounded-lg font-label-caps text-label-caps uppercase hover:bg-surface-variant hover:text-on-surface transition-colors">Decline</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-caps text-label-caps uppercase italic shadow-[0_0_15px_rgba(78,222,163,0.3)] hover:scale-95 transition-transform">Accept</button>
+</div>
+</div>
+</div>
+<!-- Request Item 3 -->
+<div class="bg-surface-container-high rounded-xl p-md flex flex-col sm:flex-row items-center gap-md border border-outline-variant/20 hover:border-primary/50 transition-colors shadow-sm">
+<div class="flex items-center gap-md w-full sm:w-auto">
+<img alt="Player 3" class="w-16 h-16 rounded-lg object-cover" data-alt="A portrait of an energetic male player looking directly at the camera. The setting is dimly lit with strong neon green accents highlighting his features, giving a cyber-athletic vibe. The visual style is bold, matching a fast-paced, modern cricket ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjYRj7CFgC5CehJJaV9fZ4bWZJkzmNRzUTlBFdR72uAn8N3wgjFkaYBjv3cBaWUTH-V2IfvnBVaH398V9HAD1yGQKfS6Pbma9QrkjFDyW9q7yErGpD8RAbwlIelFV2nRgcMaYUxpiUQjTMS9ITA3wwCg1KpCGix-2PmgYqFl2klXJSiYGODPA1s0xi0cMlNp2d9u_4q0bWyn8YnH53SB7dAZnXby1TCuDUJnJCea8QtrnlIUCs4_0cctwuBjCG_cXLS8-01ya_e2Q"/>
+<div class="flex-grow">
+<h4 class="font-title-md text-title-md text-on-surface">Amit Patel</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded font-label-caps text-[10px] uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">sports</span> Batsman</span>
+</div>
+</div>
+</div>
+<div class="flex flex-row sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto ml-auto gap-4 sm:gap-1">
+<div class="flex flex-col items-center sm:items-end">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-secondary leading-none">72%</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Reliability</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-transparent border border-outline-variant text-on-surface-variant px-4 py-2 rounded-lg font-label-caps text-label-caps uppercase hover:bg-surface-variant hover:text-on-surface transition-colors">Decline</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-caps text-label-caps uppercase italic shadow-[0_0_15px_rgba(78,222,163,0.3)] hover:scale-95 transition-transform">Accept</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Hidden per instructions for dashboard/focused screens, but structure provided if needed contextually, keeping hidden) -->
+<nav class="hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-8 bg-surface-container-highest/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] md:hidden">
+<!-- Implementation omitted to prioritize canvas as per shell mandate -->
+</nav>
+</body></html>

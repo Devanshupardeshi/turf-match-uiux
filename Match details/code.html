@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f4fcee",
+                    "primary": "#006e23",
+                    "surface-container-high": "#e3ebdd",
+                    "on-secondary-fixed-variant": "#474747",
+                    "on-surface": "#161d15",
+                    "surface-container-low": "#eef6e9",
+                    "on-secondary-container": "#646464",
+                    "on-primary-fixed-variant": "#005319",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#e2e2e2",
+                    "on-background": "#161d15",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "inverse-on-surface": "#ebf3e6",
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-primary-fixed": "#002106",
+                    "on-primary-container": "#004112",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "on-surface-variant": "#3e4a3c",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#5ce06d",
+                    "inverse-surface": "#2b322a",
+                    "surface-bright": "#f4fcee",
+                    "surface-dim": "#d4dccf",
+                    "tertiary": "#505f76",
+                    "surface-tint": "#006e23",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "primary-fixed": "#7afd86",
+                    "on-tertiary-container": "#29384d",
+                    "on-primary": "#ffffff",
+                    "surface": "#f4fcee",
+                    "tertiary-container": "#92a2ba",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#5ce06d",
+                    "surface-container-highest": "#dde5d8",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "surface-variant": "#dde5d8",
+                    "primary-container": "#2eb84b",
+                    "outline-variant": "#bdcab8",
+                    "outline": "#6d7b6a",
+                    "secondary": "#5e5e5e",
+                    "surface-container": "#e8f0e3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "12px",
+                    "xs": "4px",
+                    "margin-mobile": "12px",
+                    "xl": "24px",
+                    "sm": "8px",
+                    "base": "4px",
+                    "lg": "16px",
+                    "gutter": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Lexend"],
+                    "headline-lg": ["Lexend"],
+                    "headline-md": ["Lexend"],
+                    "body-sm": ["Lexend"],
+                    "label-bold": ["Lexend"],
+                    "display-lg": ["Lexend"],
+                    "body-lg": ["Lexend"]
+            },
+            "fontSize": {
+                    "label-sm": ["10px", {"lineHeight": "10px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+                    "headline-lg": ["24px", {"lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["18px", {"lineHeight": "22px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-bold": ["12px", {"lineHeight": "12px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "display-lg": ["40px", {"lineHeight": "40px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-32">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 backdrop-blur-md bg-opacity-90 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-sm">
+<button class="active:scale-95 transition-transform duration-150 p-2 rounded-xl text-on-surface dark:text-on-surface">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-display-lg text-headline-md text-primary dark:text-primary-fixed">TurfMatch</h1>
+</div>
+<div class="flex items-center gap-xs">
+<button class="active:scale-95 transition-transform duration-150 p-2 rounded-xl text-on-surface dark:text-on-surface">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<button class="active:scale-95 transition-transform duration-150 p-2 rounded-xl text-on-surface dark:text-on-surface">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-14">
+<!-- Hero Image Section -->
+<div class="relative w-full h-[280px] overflow-hidden">
+<img alt="Cricket Turf" class="w-full h-full object-cover" data-alt="A professional-grade floodlit synthetic cricket turf at night with vibrant green texture and crisp white boundary lines. The perspective is from the ground level, looking across the pitch towards modern sports stadium seating in the distance. The atmosphere is energetic, captured in high-contrast photography with a cool evening color temperature and sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt0_gVBpO48cRwAHHtZNSHNu3u7-fs5X4E5T04g5ravdRVCcwbhHrlF9k9OOx0P5MdgZcuz_WtWLOZ4ax2eKMyBhMQY1M52pTyM2Qwd9SxX2h_Jqt0Z6sjcX9eJb0Mpg-7Xu0jV7I7QF26RQ9TIEGtr4_Ak8oNDBVJQiOrZI67m8b1QhPOZbtFJA9LtozDPZ1NI03WHDoLHQIPYFa3WMwFgYKzOqmgGfhp9oypCUqK9prHwcCBv68Fh4hBWSbhEcR8Tm2u7RqbAUM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<p class="font-label-bold text-label-bold uppercase tracking-wider mb-1 text-primary-fixed">MATCH 12 OF 24 • LIVE IN 2H</p>
+<h2 class="font-headline-lg text-headline-lg text-surface-container-lowest">Elite Friday Night T20 Bash</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="font-body-sm text-body-sm opacity-90">Sky Arena, Sector 44, Bengaluru</span>
+</div>
+</div>
+</div>
+<!-- Quick Info Badges -->
+<div class="flex gap-gutter px-margin-mobile py-lg overflow-x-auto hide-scrollbar bg-surface-container-low border-b border-outline-variant">
+<div class="flex-shrink-0 bg-surface-container-lowest border border-outline-variant px-md py-sm rounded-xl flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Entry Fee</p>
+<p class="font-label-bold text-label-bold text-on-surface">₹450 / Player</p>
+</div>
+</div>
+<div class="flex-shrink-0 bg-surface-container-lowest border border-outline-variant px-md py-sm rounded-xl flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="grid_view">grid_view</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Format</p>
+<p class="font-label-bold text-label-bold text-on-surface">11 vs 11 • T20</p>
+</div>
+</div>
+<div class="flex-shrink-0 bg-surface-container-lowest border border-outline-variant px-md py-sm rounded-xl flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="military_tech">military_tech</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Skill Level</p>
+<p class="font-label-bold text-label-bold text-on-surface">Intermediate</p>
+</div>
+</div>
+</div>
+<!-- Ground Location Section -->
+<section class="px-margin-mobile py-lg">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Ground Location</h3>
+<button class="font-label-bold text-label-bold text-primary flex items-center gap-1">
+                    GET DIRECTIONS <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+<div class="h-40 w-full rounded-xl border border-outline-variant overflow-hidden relative">
+<img alt="Map Location" class="w-full h-full object-cover opacity-80" data-alt="A clean, minimalist map interface showing a pinpoint over a recreation area labeled Sky Arena. The map aesthetic is light mode with soft grays and muted green parks, focusing on high-contrast street labels. The design is modern, professional, and consistent with a high-end sports application interface." data-location="Bengaluru" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-pl1IddEAsQFpQjuRWxCZRTPhUKAec9OHhe5oriyzqRKFFv2ubbwG_b_8VAdA8QIpe2FRciCdFvnt9Wx7K_6gk61n3yxbgJz6Rh87TDuApRT7VqsJm_-oURWbAP5N6oVhakrR3FHaiXFMr2IXuOT5yoteiaYXiNz2uDQaLKV_xmSIpZypYsfbxV4TZ_la8Lk2TBv_EX0DrDfhCukIZOT9JGRsEtDyZ-Ski3FckT5vn8Foj8LAjTW_Eytpx6deESlkbP8Cxg5T0rE"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-white p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-2xl" data-icon="sports_cricket" data-weight="fill">sports_cricket</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Squad Section -->
+<section class="px-margin-mobile py-md bg-surface-container-low border-y border-outline-variant">
+<div class="flex justify-between items-baseline mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Confirmed Squad</h3>
+<span class="font-label-bold text-label-bold text-on-surface-variant bg-surface-container-highest px-sm py-1 rounded-lg">18/22 PLAYERS</span>
+</div>
+<!-- Player Grid - Bento Inspired -->
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Captain Card -->
+<div class="col-span-2 bg-surface-container-lowest border-2 border-primary rounded-xl p-md flex items-center gap-md relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary text-white px-md py-1 rounded-bl-xl font-label-bold text-label-sm">ORGANIZER</div>
+<img alt="Captain" class="w-16 h-16 rounded-full object-cover border-2 border-primary-container" data-alt="Headshot of a confident young male athlete in a white cricket jersey. He has a friendly, professional expression and short dark hair. The lighting is bright and natural, set against a blurred stadium background. The style is high-contrast, clean, and energetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnIdKKfpu0p8bl5iYYPHXAmGIYPfO2OQ_rXJoNNuUrAhIAuCy558zoKzUJ6tl5wVjvvXhyDeUF1A8pqhiwtvo6FQ4jwsszqyn2wgx2ghea-PBMjrL9cQ1eO3tKPlIZ19g6KVF77PV2KKlD6jJnXNxzABaxdJfBVa9DzJx66Lt7yeZyEZDYQhrC0WLO1RxYxG7VrfBJ5QYlOlDnghWRAn_Q7SbbDZ7KD3yz7HoIqwbTyvTtPzHcikIPxq8gCy6W_I_3eRgGxv66en4"/>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface">Rohit Sharma</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">All-Rounder • 4.9★</p>
+</div>
+</div>
+<!-- Squad Members -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-sm flex items-center gap-sm">
+<img alt="Player 2" class="w-10 h-10 rounded-xl object-cover" data-alt="Profile portrait of a focused man in sports gear. Modern studio lighting, minimalist composition, crisp details showing athletic determination. High-contrast light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSkDnIBKs-l9c1G1JZJL37SCBhJTvOhPh7jQ2xQByuekmOnp4HXUhUT099Th6Gcx9sNp8X-VFXYclSQwDb2jiJUKoblk2UhTMppZKanF83H1N_d1NJiGlUvb7dK1u5bvUmLCjje9QLS9JciuRT66_p99aKzQ-2ZCnv6LtGlzUv67P-bvdIGuTVQD5AQihrJQzlicHdjjaSc5GhW2Gl2Uet6f7kzHOWmcxhv7ortNiXORo3SjzgKp8G96uhZnkLyegzrx-WhbaI2RA"/>
+<div class="min-w-0">
+<p class="font-label-bold text-label-bold text-on-surface truncate">Amit V.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Bowler</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-sm flex items-center gap-sm">
+<img alt="Player 3" class="w-10 h-10 rounded-xl object-cover" data-alt="Portrait of an athletic male player in a black sports shirt. Bright, professional lighting highlighting clear facial features. Sports-focused photography with a shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcN-goI20SXXHlLStRrjL7mLhcUzLLedJntKzotayFWpW3M1IkIA4PqNq1pMRqN1HKBAI-rNUyLIp3h7WfncehEemvWqqTbM3ktifdY1GPxwvJHFd51to1vJBV2FGE1_nGpmhDX2AUcqEF40i1IOkvztqliYHvYQ3Raw9mahwoKfiuIRIedeLrqXlCt8g3EDmP5fSg0v9zoGfz-M3D4DZWRjW8rDthH5ntGDbBWVsPBGje8uVNTe8Z8Vo90qGjtpkxdvw6pt819-M"/>
+<div class="min-w-0">
+<p class="font-label-bold text-label-bold text-on-surface truncate">Sagar K.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Batsman</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-sm flex items-center gap-sm">
+<img alt="Player 4" class="w-10 h-10 rounded-xl object-cover" data-alt="Close-up headshot of a smiling player in activewear. High-key lighting, vibrant and energetic mood, sharp details on skin and fabric textures. Modern sports-app profile style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxMEuJyU236tF1fx502Wq2LCHxtW0j1f-Tob1ECfnrh1X1ZeZc1Pyht2X_YId3xgwsdGUQ7P5TiTUcOQi088bZVZwyzjl7aaUgpQXRJKw2MJIA9STLUPxnjH_YolIuPBqb2ipcvvtE8AMj-9_4lenkj0BLkpPsRXLOcDZo8uEbepNilV3vR5Z_qVlbaoFxrvYeUIR4F8z5g8prPcbMcdGPPRBhwM4PBPtQF8AncN_6pI9kwpTcvxKYDw7A0a1ogxayn33BB245hDY"/>
+<div class="min-w-0">
+<p class="font-label-bold text-label-bold text-on-surface truncate">Priya S.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">All-Rounder</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-sm flex items-center gap-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary font-label-bold">
+                        +14
+                    </div>
+<div class="min-w-0">
+<p class="font-label-bold text-label-bold text-on-surface">Others</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Waiting...</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Rules Section -->
+<section class="px-margin-mobile py-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Match Rules</h3>
+<ul class="space-y-sm">
+<li class="flex gap-sm">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">White leather ball will be provided by the organizer.</p>
+</li>
+<li class="flex gap-sm">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Players must report 15 minutes before the start time.</p>
+</li>
+<li class="flex gap-sm">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Full whites or sports jerseys mandatory.</p>
+</li>
+</ul>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full z-50 p-lg bg-surface/95 backdrop-blur-md border-t border-outline-variant flex flex-col gap-sm">
+<div class="flex justify-between items-center px-xs">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Total Payable</p>
+<p class="font-headline-md text-headline-md text-on-surface">₹450.00</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-error uppercase font-bold">4 slots left</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">FILLING FAST</p>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-label-bold text-headline-md py-4 rounded-xl active:scale-[0.98] transition-all duration-200 uppercase tracking-wide">
+            Request to Join Match
+        </button>
+</div>
+<!-- Navigation Shell (Bottom Nav) -->
+<nav class="fixed bottom-0 left-0 w-full z-[60] flex justify-around items-center px-4 py-2 backdrop-blur-md bg-opacity-95 bg-surface dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-container p-2">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl p-2">
+<span class="material-symbols-outlined" data-icon="add_box" data-weight="fill">add_box</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-container p-2">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-container p-2">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+</nav>
+</body></html>
